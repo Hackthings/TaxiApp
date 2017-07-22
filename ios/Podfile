@@ -6,8 +6,8 @@ platform :ios, '8.0'
 # Change 'TaxiApp' to match the target in your Xcode project.
 target 'TaxiApp' do
 
-  pod 'Yoga', :path => '../../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
-  pod 'React', path: '../../node_modules/react-native', :subspecs => [
+  pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
+  pod 'React', path: '../node_modules/react-native', :subspecs => [
     'Core',
     'RCTActionSheet',
     'RCTAnimation',
@@ -23,8 +23,8 @@ target 'TaxiApp' do
   ]
 
   pod 'GoogleMaps'  # <~~ remove this line if you do not want to support GoogleMaps on iOS
-  pod 'react-native-maps', path: '../../'
-  pod 'react-native-google-maps', path: '../../'  # <~~ if you need GoogleMaps support on iOS
+  pod 'react-native-maps', path: '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # <~~ if you need GoogleMaps support on iOS
 
 end
 
