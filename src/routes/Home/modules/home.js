@@ -1,11 +1,20 @@
 import update from "react-addons-update";
 import constants from "./actionConstants";
+import { Dimensions } from "react-native";
 
 
 //-----------------------------
 // Constants
 //-----------------------------
 const { GET_CURRENT_LOCATION } = constants;
+
+const { width, height } = Dimensions.get("window");
+
+const ASPECT_RATIO = width / height;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = 0.00421;
+
+const ASPECT_RATIO = width / height;
 
 //-----------------------------
 // Actions
@@ -31,7 +40,12 @@ export function getCurrentLocation(){
 function handleGetCurrentLocation(state, action){
 	return update(state, {
 		region:{
-			$set:action.payload
+			latitude:{
+				$set:action.payload.coords.latitude
+			},
+			longitude:{
+				$set:action.payload.coords.longitude
+			},
 		}
 	})
 }
