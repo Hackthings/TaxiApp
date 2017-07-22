@@ -32,14 +32,17 @@ export function getCurrentLocation(){
 		);
 	}
 }
-// GET USER INPUT
-
+// Get User Input
 export function getInputData(payload){
 	return{
 		type:GET_INPUT,
-		payload:
+		payload
 	}
 }
+
+// Toggle Search Results Modal
+
+
 
 //-----------------------------
 // Action Handlers
