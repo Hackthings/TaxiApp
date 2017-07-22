@@ -151,7 +151,7 @@ const ACTION_HANDLERS = {
 	GET_CURRENT_LOCATION:handleGetCurrentLocation,
 	GET_INPUT:handleGetInputData,
 	TOGGLE_SEARCH_RESULT, handleToggleSearchResult,
-	GET_ADDRESS_PREDICTIONS:handleGetAddressPredictions
+	GET_ADDRESS_PREDICTIONS:handleGetAddressPredictions,
 }
 const initialState = {
 	region:{},
