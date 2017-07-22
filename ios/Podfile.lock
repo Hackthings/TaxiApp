@@ -4,6 +4,11 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - GooglePlacePicker (2.1.1):
+    - GoogleMaps (= 2.1.1)
+    - GooglePlaces (= 2.1.1)
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
   - React (0.46.4):
     - React/Core (= 0.46.4)
   - react-native-google-maps (0.15.3):
@@ -44,6 +49,8 @@ PODS:
 
 DEPENDENCIES:
   - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - React/BatchedBridge (from `../node_modules/react-native`)
@@ -72,11 +79,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlacePicker: 665f39f931f2df32f9dd3fcc45f7e8abf71e535c
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   React: 596d8774642d10fea20b1f24cc591fcf633f73ad
   react-native-google-maps: f8780ca7802588d0ccd3a83c522a81f433bc1b4a
   react-native-maps: 6a886202fb8af8568615501c0f9f933ca282a7a3
   Yoga: 98e24da91afe33bb43fedaf27dafede269c04fe8
 
-PODFILE CHECKSUM: dd5670a6fd4c23a89ab22a4684c98325a52b4271
+PODFILE CHECKSUM: a179659f49b82cb84c9637066c00efb0093a3240
 
 COCOAPODS: 1.2.1
