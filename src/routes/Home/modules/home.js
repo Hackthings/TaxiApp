@@ -54,7 +54,7 @@ export function toggleSearchResultModal(payload){
 	}
 }
 
-// Get Addresses From Google Place
+// Get Addresses From Google API
 export function getAddressPredictions(){
 	return(dispatch, store)=>{
 		let userInput = store().home.resultTypes.pickUp ? store().home.inputData.pickUp : store().home.inputData.dropOff;
@@ -115,10 +115,10 @@ function handleToggleSearchResult(state, action){
 				},
 				dropOff:{
 					$set:false
-				},
-				predictions:{
-					$set:{}
 				}
+			},
+			predictions:{
+				$set:{}
 			}
 		});
 	}
@@ -130,10 +130,10 @@ function handleToggleSearchResult(state, action){
 				},
 				dropOff:{
 					$set:true
-				},
-				predictions:{
-					$set:{}
 				}
+			},
+			predictions:{
+				$set:{}
 			}
 		});
 	}
@@ -149,7 +149,9 @@ function handleGetAddressPredictions(state, action){
 
 const ACTION_HANDLERS = {
 	GET_CURRENT_LOCATION:handleGetCurrentLocation,
-	GET_INPUT:handleGetInputData
+	GET_INPUT:handleGetInputData,
+	TOGGLE_SEARCH_RESULT, handleToggleSearchResult,
+	GET_ADDRESS_PREDICTIONS:handleGetAddressPredictions
 }
 const initialState = {
 	region:{},

@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import styles from "./SearchBoxStyles.js";
 
-export const SearchBox = ({getInputData, toggleSearchResultModal})=>{
+export const SearchBox = ({getInputData, toggleSearchResultModal, getAddressPredictions})=>{
 	function handleInput(key, val){
 		getInputData({
 			key,
