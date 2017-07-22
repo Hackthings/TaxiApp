@@ -1,4 +1,4 @@
-import React, { Component, PopTypes } from "react";
+import React, { Component, PropTypes } from "react";
 import { Router } from "react-native-router-flux";
 
 import scenes from "../routes/scenes";
@@ -15,6 +15,6 @@ export default class AppContainer extends Component {
 			<Provider store={this.props.store}>
 				<Router scenes={scenes} />
 			</Provider>
-			)
+			);
 	}
 }

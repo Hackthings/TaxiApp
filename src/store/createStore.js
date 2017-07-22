@@ -10,7 +10,7 @@ export default (initialState = {}) => {
 	// ==========================
 	// Middleware Configuration
 	// ==========================
-	const Middleware = [thunk, log];
+	const middleware = [thunk, log];
 
 	// ==========================
 	// Store Enhancers
