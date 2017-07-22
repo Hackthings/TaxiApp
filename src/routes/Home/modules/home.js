@@ -6,7 +6,7 @@ import { Dimensions } from "react-native";
 //-----------------------------
 // Constants
 //-----------------------------
-const { GET_CURRENT_LOCATION, GET_INPUT } = constants;
+const { GET_CURRENT_LOCATION, GET_INPUT, TOGGLE_SEARCH_RESULT } = constants;
 
 const { width, height } = Dimensions.get("window");
 
@@ -41,7 +41,12 @@ export function getInputData(payload){
 }
 
 // Toggle Search Results Modal
-
+export function toggleSearchResultModal(payload){
+	return{
+		type:TOGGLE_SEARCH_RESULT,
+		payload
+	}
+}
 
 
 //-----------------------------
@@ -77,13 +82,42 @@ function handleGetInputData(state, action){
 	});
 }
 
+function handleToggleSearchResult(state, action){
+	if(action.payload === "pickUp"){
+		return update(state, {
+			resultTypes:{
+				pickUp:{
+					$set:true
+				},
+				dropOff:{
+					$set:false
+				}
+			}
+		});
+	}
+	if(action.payload === "dropOff"){
+		return update(state, {
+			resultTypes:{
+				pickUp:{
+					$set:false
+				},
+				dropOff:{
+					$set:true
+				}
+			}
+		});
+	}
+}
+
+
 const ACTION_HANDLERS = {
 	GET_CURRENT_LOCATION:handleGetCurrentLocation,
 	GET_INPUT:handleGetInputData
 }
 const initialState = {
 	region:{},
-	inputData:{}
+	inputData:{},
+	resultTypes:{}
 };
 
 export function HomeReducer (state = initialState, action){

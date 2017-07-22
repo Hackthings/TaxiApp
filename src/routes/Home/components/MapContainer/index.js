@@ -7,7 +7,7 @@ import SearchResults from "../SearchResults";
 
 import styles from "./MapContainerStyles";
 
-export const MapContainer = ({region, getInputData})=>{
+export const MapContainer = ({region, getInputData, toggleSearchResultModal})=>{
 
 	return(
 		<View style={styles.container}>
@@ -21,7 +21,7 @@ export const MapContainer = ({region, getInputData})=>{
 					pinColor="red"
 				/>
 			</MapView>
-			<SearchBox getInputData={getInputData}/>
+			<SearchBox getInputData={getInputData} toggleSearchResultModal={toggleSearchResultModal} />
 			<SearchResults/>
 		</View>
 	)
