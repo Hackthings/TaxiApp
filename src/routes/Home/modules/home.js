@@ -6,7 +6,7 @@ import { Dimensions } from "react-native";
 //-----------------------------
 // Constants
 //-----------------------------
-const { GET_CURRENT_LOCATION } = constants;
+const { GET_CURRENT_LOCATION, GET_INPUT } = constants;
 
 const { width, height } = Dimensions.get("window");
 
@@ -32,6 +32,14 @@ export function getCurrentLocation(){
 		);
 	}
 }
+// GET USER INPUT
+
+export function getInputData(payload){
+	return{
+		type:GET_INPUT,
+		payload:
+	}
+}
 
 //-----------------------------
 // Action Handlers
@@ -54,13 +62,25 @@ function handleGetCurrentLocation(state, action){
 		}
 	})
 }
+
+function handleGetInputData(state, action){
+	const { key, value } = action.payload
+	return update(state, {
+		inputData:{
+			[key]:{
+				$set:value
+			}
+		}
+	});
+}
+
 const ACTION_HANDLERS = {
-	GET_CURRENT_LOCATION:handleGetCurrentLocation
+	GET_CURRENT_LOCATION:handleGetCurrentLocation,
+	GET_INPUT:handleGetInputData
 }
 const initialState = {
-	region:{
-		
-	}
+	region:{},
+	inputData:{}
 };
 
 export function HomeReducer (state = initialState, action){
