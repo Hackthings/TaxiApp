@@ -12,9 +12,8 @@ const { width, height } = Dimensions.get("window");
 
 const ASPECT_RATIO = width / height;
 const LATITUDE_DELTA = 0.0922;
-const LONGITUDE_DELTA = 0.00421;
+const LONGITUDE_DELTA = ASPECT_RATIO * LATITUDE_DELTA;
 
-const ASPECT_RATIO = width / height;
 
 //-----------------------------
 // Actions
@@ -46,13 +45,23 @@ function handleGetCurrentLocation(state, action){
 			longitude:{
 				$set:action.payload.coords.longitude
 			},
+			latitudeDelta:{
+				$set:LATITUDE_DELTA
+			},
+			longitudeDelta:{
+				$set:LONGITUDE_DELTA
+			}
 		}
 	})
 }
 const ACTION_HANDLERS = {
 	GET_CURRENT_LOCATION:handleGetCurrentLocation
 }
-const initialState = {};
+const initialState = {
+	region:{
+		
+	}
+};
 
 export function HomeReducer (state = initialState, action){
 	const handler = ACTION_HANDLERS[action.type];
