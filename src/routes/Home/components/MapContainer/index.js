@@ -3,6 +3,7 @@ import { View } from "native-base";
 import MapView from "react-native-maps";
 
 import SearchBox from "../SearchBox";
+import SearchResults from "../SearchResults";
 
 import styles from "./MapContainerStyles";
 
@@ -21,6 +22,7 @@ export const MapContainer = ({region})=>{
 				/>
 			</MapView>
 			<SearchBox/>
+			<SearchResults/>
 		</View>
 	)
 }
