@@ -21,9 +21,9 @@ export const MapContainer = ({region, getInputData, toggleSearchResultModal, get
 					pinColor="red"
 				/>
 			</MapView>
-			<SearchBox 
-				getInputData={getInputData} 
-				toggleSearchResultModal={toggleSearchResultModal} 
+			<SearchBox
+				getInputData={getInputData}
+				toggleSearchResultModal={toggleSearchResultModal}
 				getAddressPredictions={getAddressPredictions}
 			/>
 			{ (resultTypes.pickUp || resultTypes.dropOff ) && 

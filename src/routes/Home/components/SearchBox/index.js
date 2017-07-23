@@ -11,6 +11,7 @@ export const SearchBox = ({getInputData, toggleSearchResultModal, getAddressPred
 			key,
 			value:val
 		});
+		getAddressPredictions();
 	}
 		return(
 			<View style={styles.searchBox}>
@@ -21,7 +22,11 @@ export const SearchBox = ({getInputData, toggleSearchResultModal, getAddressPred
 					</Text>
 					<InputGroup>
 						<Icon name="search" size={15} color="#FF5E3A"/>
-						<Input onFocus={()=>toggleSearchResultModal("pickUp")} style={styles.inputSearch} placeholder="Choose pick-up location" onChangeText={handleInput.bind(this, "pickUp")}/>
+						<Input 
+						
+						style={styles.inputSearch} 
+						placeholder="Choose pick-up location" 
+						onChangeText={handleInput.bind(this, "pickUp")}/>
 					</InputGroup>
 				</View>
 
@@ -31,7 +36,11 @@ export const SearchBox = ({getInputData, toggleSearchResultModal, getAddressPred
 					</Text>
 					<InputGroup>
 						<Icon name="search" size={15} color="#FF5E3A"/>
-						<Input onFocus={()=>toggleSearchResultModal("dropOff")} style={styles.inputSearch} placeholder="Choose drop-off location" onChangeText={handleInput.bind(this, "pickUp")}/>
+						<Input 
+						onFocus={()=>toggleSearchResultModal("dropOff")} 
+						style={styles.inputSearch} 
+						placeholder="Choose drop-off location" 
+						onChangeText={handleInput.bind(this, "dropOff")}/>
 					</InputGroup>
 				</View>
 			</View>

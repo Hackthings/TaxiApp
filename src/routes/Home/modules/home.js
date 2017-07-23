@@ -96,7 +96,7 @@ function handleGetCurrentLocation(state, action){
 }
 
 function handleGetInputData(state, action){
-	const { key, value } = action.payload
+	const { key, value } = action.payload;
 	return update(state, {
 		inputData:{
 			[key]:{
@@ -111,7 +111,7 @@ function handleToggleSearchResult(state, action){
 		return update(state, {
 			resultTypes:{
 				pickUp:{
-					$set:true
+					$set:true,
 				},
 				dropOff:{
 					$set:false
@@ -126,7 +126,7 @@ function handleToggleSearchResult(state, action){
 		return update(state, {
 			resultTypes:{
 				pickUp:{
-					$set:false
+					$set:false,
 				},
 				dropOff:{
 					$set:true
@@ -144,7 +144,7 @@ function handleGetAddressPredictions(state, action){
 		predictions:{
 			$set:action.payload
 		}
-	})
+	});
 }
 
 const ACTION_HANDLERS = {
