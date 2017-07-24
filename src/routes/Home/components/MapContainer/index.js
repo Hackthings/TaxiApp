@@ -7,7 +7,7 @@ import SearchResults from "../SearchResults";
 
 import styles from "./MapContainerStyles";
 
-export const MapContainer = ({region, getInputData, toggleSearchResultModal, getAddressPredictions, resultTypes})=>{
+export const MapContainer = ({region, getInputData, toggleSearchResultModal, getAddressPredictions, resultTypes, predictions})=>{
 
 	return(
 		<View style={styles.container}>
